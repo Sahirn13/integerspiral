@@ -1,0 +1,30 @@
+<div class="container" ng-controller="MainCtrl as vm">
+    <h1>Integer Spiral</h1>
+    <form autocomplete="off">
+        <label>
+            Please enter a number:
+            <input type="text" name="number" ng-model="number">
+        </label>
+        <div>
+            <input type="radio" name="direction" ng-model="direction">
+            <label>Left</label>
+            <input type="radio" name="direction" ng-model="direction" value="true">
+            <label>Right</label>
+        </div>
+        <input type="submit" name="Submit" value="Submit" ng-click="vm.test(number, direction)">
+    </form>
+
+
+    <div ng-cloak>
+        <table>
+            <tr ng-repeat="row in vm.matrix track by $index">
+                <td>
+						<pre>
+						{{row}}
+						</pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
